@@ -1,6 +1,14 @@
 # snickerdoodle-build-scripts
 SD card boot and root filesystem component build scripts 
 
+## Dependencies
+for these scripts the following tools must be previously installed on your system:
+
+```
+sudo apt-get --assume-yes install kpartx
+```
+
+
 To fetch the prebuilt SD card binaries from which to build an SD card:
 
 ```
