@@ -6,6 +6,7 @@ for these scripts the following tools must be previously installed on your syste
 
 ```
 sudo apt-get --assume-yes install kpartx
+sudo apt-get --assume-yes install debootstrap
 ```
 
 
