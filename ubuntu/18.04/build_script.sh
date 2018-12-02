@@ -11,10 +11,6 @@ rootdir=`pwd`
 rootfs=$rootdir/buildfs
 boards=( "snickerdoodle" "snickerdoodle_black" "snickerdoodle_prime" "snickerdoodle_one" )
 
-# Need to do this a better way: Add this to /etc/bash.bashrc or ~/.bashrc
-source /opt/Xilinx/Vivado/2017.4/settings64.sh
-source /opt/Xilinx/SDK/2017.4/settings64.sh
-
 #
 # Grab sources
 #
@@ -117,7 +113,7 @@ EOF
 chmod 0600 $rootfs/etc/wpa_supplicant.conf
 
 # configure the DHCP server for the wireless access point
-sed -i -e 's/^\(INTERFACES=\).*/\1\"wlan1\"/' /etc/default/isc-dhcp-server
+sed -i -e 's/^\(INTERFACES=\).*/\1\"wlan1\"/' $rootfs/etc/default/isc-dhcp-server
 
 mkdir -p $rootfs/etc/snickerdoodle/accesspoint
 
@@ -216,7 +212,7 @@ EOF
 chmod 755 $rootfs/etc/snickerdoodle/accesspoint/ifupdown.sh
 
 # Link to the script for interface bringup
-ln -s ../../snickerdoodle/accesspoint/ifupdown.sh ubuntu-armhf/etc/network/if-pre-up.d/accesspoint
+ln -s ../../snickerdoodle/accesspoint/ifupdown.sh $rootfs/etc/network/if-pre-up.d/accesspoint
 
 # Default hostapd configuration
 
@@ -684,9 +680,9 @@ boot)
 	build_fsbl $@		|| exit 1
 	;;
 system)
-#	build_u_boot		|| exit 1
+	build_u_boot		|| exit 1
 	build_kernel		|| exit 1
-#	build_dtb		|| exit 1
+	build_dtb		|| exit 1
 	create_boot		|| exit 1
 	;;
 card)
