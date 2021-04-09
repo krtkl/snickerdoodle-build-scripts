@@ -1,0 +1,8 @@
+bootargs=console=ttyPS0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 rw rootwait earlyprink uio_pdrv_genirq.of_id=krtkl,generic-uio,ui_pdrv
+bitstream_image=system.bit
+#ethaddr=6c:5c:3d:a0:00:00
+#eth1addr=6c:5c:3d:a0:00:01
+script_image=uboot.scr
+script_load_address=0x4000000
+uenvcmd=if test -e mmc 0 ${script_image}; then load mmc 0 ${script_load_address} ${script_image} && source ${script_load_address}; fi
+

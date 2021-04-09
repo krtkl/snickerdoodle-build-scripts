@@ -1,0 +1,57 @@
+#
+# snickerdoodle configuration
+#
+# This file is used to update user and network settings during boot.
+#
+
+#### Wireless access point (AP) configuration ##################################
+
+# Set wireless access point SSID (add "double quotes" if entry includes spaces)
+#ap_ssid=mySnickerdoodleWiFi
+
+# Set wireless access point WPA passphrase
+# MUST BE AT LEAST 8 CHARACTERS
+#ap_passphrase=superSecretPassphrase
+
+# Set access point IP address (also sets DHCP subnet)
+#ap_address=10.0.110.2
+
+# Set access point mode: Can be 'hw_mode=g' (2.4GHz) or 'hw_mode=a' (5GHz)
+#ap_hw_mode=g
+
+# Set access point channel
+# 2.4GHz (hw_mode=g) available channels: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
+# 5GHz (hw_mode=a) available channels: 36, 38, 40, 42, 44, 46, 48, 149, 153, 157, 161, 165
+#ap_channel=7
+
+#### Wireless station (STA) configuration ######################################
+
+# Set wireless network mode
+#sta_mode=wpa
+
+# Set wireless network SSID (add "double quotes" if entry includes spaces)
+#sta_ssid=myNetworkName
+
+# Set wireless network key
+#sta_key=myNetworkPassphrase
+
+#### User configuration ########################################################
+
+# Update user passwords with a comma delimited list of "user:password"
+#update_users=user1:password1,user2:password2
+
+#### Ethernet (if present) network configurations ##############################
+
+# Set Ethernet IP configuration: Can be 'dhcp', 'static', or 'disabled'
+# MUST BE SET TO ENABLE INTERFACE
+#eth0_mode=static
+
+# Set Ethernet IP address (if mode is set to 'static')
+#eth0_address=10.1.1.100
+
+# Set Ethernet netmask (if not specified, uses 255.255.255.0)
+#eth0_netmask=255.255.255.0
+
+#eth1_mode=static
+#eth1_address=10.2.2.100
+#eth1_netmask=255.255.255.0
